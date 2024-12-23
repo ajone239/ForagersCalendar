@@ -9,37 +9,44 @@ import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+                headerShown: false,
+                tabBarButton: HapticTab,
+                tabBarBackground: TabBarBackground,
+                tabBarStyle: Platform.select({
+                    ios: {
+                        // Use a transparent background on iOS to show the blur effect
+                        position: 'absolute',
+                    },
+                    default: {},
+                }),
+            }}>
+            <Tabs.Screen
+                name="what_to_forage_now"
+                options={{
+                    title: 'Today',
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="clock.fill" color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Calendar',
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="settings"
+                options={{
+                    title: 'Settings',
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
+                }}
+            />
+        </Tabs>
+    );
 }
