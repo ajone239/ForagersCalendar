@@ -7,6 +7,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { Forageable, FetchForageablesService } from '@/services/FetchForageablesService';
 import { useEffect, useState } from 'react';
+import { ForageableCard } from '@/components/ForageagbleCard';
 
 export default function TabTwoScreen() {
     const [forageables, setForageables] = useState<Forageable[] | null>(null);
@@ -51,9 +52,7 @@ export default function TabTwoScreen() {
                     <FlatList
                         data={forageables}
                         renderItem={({ item }) =>
-                            <ThemedText>
-                                {item.name}
-                            </ThemedText>
+                            <ForageableCard forageable={item} />
                         }
                     />
                 ) : (

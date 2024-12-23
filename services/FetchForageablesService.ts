@@ -11,22 +11,23 @@ export class FetchForageablesService {
     }
 
 }
+
 export enum ForagableClass {
-    Mushroom,
-    Fruit,
-    Leaf,
-    Stalk,
+    Mushroom = "Mushroom",
+    Fruit = "Fruit",
+    Leaf = "Leaf",
+    Stalk = "Stalk",
 }
 
 export enum Season {
-    Summer,
-    Fall,
-    Winter,
-    Spring,
+    Summer = "Summer",
+    Fall = "Fall",
+    Winter = "Winter",
+    Spring = "Spring",
 }
 
 export enum Region {
-    SouthEast,
+    SouthEast = "SouthEast",
 }
 
 export interface Forageable {
